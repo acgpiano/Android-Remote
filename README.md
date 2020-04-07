@@ -1,38 +1,38 @@
-#### 介绍
+## 介绍
 
-该项目是一个纯安卓远控项目，无需连接电脑，只需要自己有**<u>一台vps和一台root过的安卓机</u>**，就可以达到teamviewer、向日葵手机远控和airdroid类似的效果。也可以用于自己搭建android服务器使用。
+该项目是一个纯安卓远控项目，无需连接电脑，只需要自己有***一台vps和一台root过的安卓机***，就可以达到teamviewer、向日葵手机远控和airdroid类似的效果。也可以用于自己搭建android服务器使用。
 
-#### 用途
+## 用途
 
 各种需要远控的，比如放一个备用机到公司钉钉打卡，或者安卓手机服务器
 
-#### 原理
+## 原理
 
 安卓adb可以使用ip加端口来进行调试，但是一般都是内网调试，如果通过frp把手机的端口映射外网，就可以直接通过公网连接调试，scrcpy项目是一个通过adb远程控制的项目，两者结合便可以完成公网远控。全程无需使用电脑就可以完成。
 
-#### 安装过程
+## 安装过程
 
-#### 0.Root安卓手机，自行搭建frp，学习安装scrcpy
+### 0.Root安卓手机，自行搭建frp，学习安装scrcpy
 
 [frp](https://github.com/fatedier/frp/releases)和[scrcpy](https://github.com/Genymobile/scrcpy)官网
 
-#### 1.安装termux
+### 1.安装termux
 
 <https://f-droid.org/packages/com.termux/>
 
 下载好后安装
 
-#### 2.安装frpc
+### 2.安装frpc
 
 注意：frpc的服务端和客户端必须保持版本一致
 
-1. 下载和服务器frps版本一致的**arm**版frpc
+1. 下载和服务器frps版本一致的***arm***版frpc
 
    <https://github.com/fatedier/frp/releases>
 
 2. 将手机supersu权限设置为永久授权，不弹窗
 
-3. 将本项目**<u>以下文件</u>**和自行下载好的**<u>frpc</u>**以及配置好的**<u>frpc.ini</u>**复制到手机的Download目录
+3. 将本项目***以下文件***和自行下载好的***frpc***以及配置好的***frpc.ini***复制到手机的Download目录
 
    install_cn.sh
 
@@ -56,7 +56,7 @@ chmod +x ./install.sh
 
 如果需要修改安卓默认调试端口，请修改install_cn.sh里面的端口
 
-#### 3.配置ssh
+### 3.配置ssh
 
 ```bash
 # 修改$PREFIX/etc/ssh/sshd_config
@@ -67,7 +67,7 @@ AllowUsers root
 
 ssh默认端口为8022，请注意frpc的配置文件设置
 
-#### 4.使用方法
+### 4.使用方法
 
 Android端启动：
 
@@ -95,7 +95,7 @@ ssh -p PORT root@IP
 
 
 
-#### 5.其它选项
+### 5.其它选项
 
 ```bash
 # 定时开关wifi
